@@ -69,12 +69,13 @@ class Patchify:
             stride=p
         ).T.reshape(-1, c, p, p)
 
-        return {
-            "patches": patches,
-            "neighbors": self.neighbors,
-            "coords": self.coords,
-            "grid_shape": self.grid_shape,
-        }
+        return patches, self.neighbors
+        #return {
+        #    "patches": patches,
+        #    "neighbors": self.neighbors,
+        #    "coords": self.coords,
+        #    "grid_shape": self.grid_shape,
+        #}
     
 class Show:
     def __init__(self, figsize=(6, 6), cmap=None):

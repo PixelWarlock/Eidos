@@ -16,9 +16,9 @@ class ImageDataset(Dataset):
     def __getitem__(self, index):
         sample = self.filepaths[index]
         x = self.transforms(sample)
-        x = self.patchify(x)
+        x, neighbors = self.patchify(x)
         #show = Show()
         #show(x['patches'])
-        return x
+        return x, neighbors
         
         
