@@ -1,0 +1,23 @@
+data:
+  train_images: /media/darnok/Nowy/X/datasets/coco-stuff/val2017/val2017
+  train_masks: /media/darnok/Nowy/X/datasets/coco-stuff/annotations/stuff_val2017.json
+  batch_size: 16
+
+shared_transformations:
+  Resize:
+    - 256 # width
+    - 256 # height
+
+model:
+  dim: 384
+  depth: 6
+
+# Keep only the regularizers you want to use.
+regularizers:
+  gram: 1.0
+  weak_sigreg: 0.01
+
+train:
+  epochs: 100
+  learning_rate: 0.0003
+  output_dir: ./outputs
